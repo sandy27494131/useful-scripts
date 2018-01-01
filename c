@@ -58,6 +58,11 @@ while [ $# -gt 0 ]; do
         args=("${args[@]}" "$@")
         break
         ;;
+    -*)
+        echo "Unknown option: $1" 1>&2
+        echo 1>&2
+        usage 1;
+        ;;
     *)
         # if not option, treat all follow args as command
         args=("${args[@]}" "$@")
